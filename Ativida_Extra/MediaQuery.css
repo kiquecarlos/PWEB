@@ -1,0 +1,88 @@
+.center {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    z-index: 15;
+    top: 50%;
+    left: 50%;
+    margin: -100px 0 0 -150px;
+    background-color: red;
+}
+
+@media (max-width: 420px) and (min-width: 0px) {
+    .center {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        z-index: 15;
+        top: 50%;
+        left: 50%;
+        margin: -100px 0 0 -150px;
+        background-color: rgb(87, 84, 84);
+    }
+}
+
+@media (max-width: 768px) and (min-width: 421px) {
+    .center {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        z-index: 15;
+        top: 50%;
+        left: 50%;
+        margin: -100px 0 0 -150px;
+        background-color: orange;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .center {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        z-index: 15;
+        top: 50%;
+        left: 50%;
+        margin: -100px 0 0 -150px;
+        background-color: rgb(247, 43, 247);
+    }
+}
+
+@media (max-width: 1366px) and (min-width: 1025px) {
+    .center {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        z-index: 15;
+        top: 50%;
+        left: 50%;
+        margin: -100px 0 0 -150px;
+        background-color: purple;
+    }
+}
+
+@media (max-width: 1080px) and (min-width: 1367px) {
+    .center {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        z-index: 15;
+        top: 50%;
+        left: 50%;
+        margin: -100px 0 0 -150px;
+        background-color: rgb(255, 72, 0);
+    }
+}
+
+@media (max-width: 1920px) and (min-width: 1081px) {
+    .center {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        z-index: 15;
+        top: 50%;
+        left: 50%;
+        margin: -100px 0 0 -150px;
+        background-color: yellow;
+    }
+}
