@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const user = {}
+
+    user.name = prompt("Qual o seu Nome?")
+    user.qtdNotas = Number(prompt("Qual a Quantidade de Notas?"))
+    user.notas = []
+    
+    for (let index = 0; index < user.qtdNotas; index++) {
+        user.notas.push(Number(prompt(`Qual o valor da Nota ${index+1}`)))
+    }
+
+    user.media = user.notas.reduce((partialSum, a) => partialSum + a, 0)/user.notas.length
+
+    alert(`Sua Média é ${user.media}`)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const arrayNumbers = []
+
+    arrayNumbers.push(Number(prompt('Digite o primeiro Número')))
+    arrayNumbers.push(Number(prompt('Digite o segundo Número')))
+
+    const sum = arrayNumbers.reduce((partialSum, a) => partialSum + a, 0)
+    const sub = arrayNumbers[0]-arrayNumbers[1]
+    const mult = arrayNumbers.reduce((partialMult, a) => partialMult * a, 1)
+    const div = arrayNumbers[0]/arrayNumbers[1]
+    const rest = arrayNumbers[0] % arrayNumbers[1]
+
+    let msg = '\r\n'
+    msg += `A soma dos números é ${sum}.`
+    msg += '\r\n'
+    msg += '\r\n'
+    msg += `A subtração dos números é ${sub}.`
+    msg += '\r\n'
+    msg += '\r\n'
+    msg += `A Multiplicação dos números é ${mult}.`
+    msg += '\r\n'
+    msg += '\r\n'
+    msg += `A Divisão dos números é ${div}.`
+    msg += '\r\n'
+    msg += '\r\n'
+    msg += `O Resto da Divisão dos números é ${rest}.`
+
+    alert(msg)
+    </script>
+</body>
+</html>
