@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JO KEN PO</title>
+    <style>
+      table,
+      th,
+      td {
+        text-align: center;
+        width: 500px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+        background: #6c7a89;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+      .box {
+        background: #fff;
+      }
+      .options {
+        cursor: pointer;
+      }
+      body {
+        margin: 0px;
+      }
+    </style>
+    <script>
+      function renderComputedSelect(icon) {
+        document.getElementById("computer").innerHTML = icon;
+      }
+
+      function renderResult(result) {
+        document.getElementById("result").innerHTML = `<b>Você ${result}!</b>`;
+      }
+
+      function computerSelect() {
+        const arrayOptions = [
+          { name: "pedra", icon: "&#129308;" },
+          { name: "papel", icon: "&#129306;" },
+          { name: "tesoura", icon: "✌" },
+        ];
+        const computerOption = arrayOptions[Math.floor(Math.random() * 3)];
+
+        renderComputedSelect(computerOption.icon);
+
+        return computerOption.name;
+      }
+
+      function calcResult(people, computer) {
+        const dictOption = `${people}_${computer}`;
+        const dictResult = {
+          pedra_papel: "Perdeu",
+          pedra_pedra: "Empatou",
+          pedra_tesoura: "Venceu",
+          papel_papel: "Empatou",
+          papel_pedra: "Venceu",
+          papel_tesoura: "Perdeu",
+          tesoura_papel: "Venceu",
+          tesoura_pedra: "Perdeu",
+          tesoura_tesoura: "Empatou",
+        };
+
+        return dictResult[dictOption];
+      }
+
+      function clickPedra() {
+        const computer = computerSelect();
+        const result = calcResult("pedra", computer);
+
+        renderResult(result);
+      }
+      function clickPapel() {
+        const computer = computerSelect();
+        const result = calcResult("papel", computer);
+
+        renderResult(result);
+      }
+      function clickTesoura() {
+        const computer = computerSelect();
+        const result = calcResult("tesoura", computer);
+
+        renderResult(result);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <table>
+          <thead>
+            <tr>
+              <th>Escolha Uma Opção</th>
+              <th>O Computador Escolheu:</th>
+              <th>Resultado:</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span
+                  class="options"
+                  onclick="clickPedra()"
+                  style="font-size: 100px"
+                  >&#129308;</span
+                >
+              </td>
+              <td rowspan="3">
+                <span id="computer" style="font-size: 100px"
+                  >Aguardando Escolha</span
+                >
+              </td>
+              <td rowspan="3" id="result"><b>Aguardando Escolha</b></td>
+            </tr>
+            <tr>
+              <td>
+                <span
+                  class="options"
+                  onclick="clickPapel()"
+                  style="font-size: 100px"
+                  >&#129306;</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span
+                  class="options"
+                  onclick="clickTesoura()"
+                  style="font-size: 100px"
+                  >✌</span
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
