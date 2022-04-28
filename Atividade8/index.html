@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pesquisa</title>
+    <script>
+        function whatIsAge(num) {
+            const age = Number(prompt(`Pesquisa Numero ${num} \n Qual a sua Idade?`))
+
+            if (!age) {
+                alert('Digite um Valor Válido')
+                return whatIsAge(num)
+            }
+            return age
+        }
+
+        function whatIsGender(num) {
+            const gender = prompt(`Pesquisa Numero ${num} \n Qual o seu genero?
+            \n F - Feminino, M - Masculino`)
+
+            if (!["F", "M"].includes(gender.toUpperCase())) {
+                alert('Digite um Valor Válido')
+                return whatIsGender(num)
+            }
+
+            return gender.toUpperCase()
+        }
+
+        function whatIsOpinion(num) {
+            const opinion = prompt(`Pesquisa Numero ${num} \n Qual o sua Opinião?\n
+            4 - Ótimo\n
+            3 - Bom \n
+            2 - Regular \n
+            1 - Péssimo`)
+
+            if (!['1', '2', '3', '4'].includes(opinion)) {
+                alert('Digite um Valor Válido')
+                return whatIsOpinion(num)
+            }
+
+            return opinion
+        }
+
+        function calcAvgAge(surveyData) {
+            const sum = surveyData.reduce(
+                (previousValue, currentValue) => previousValue + currentValue.age,
+                0
+            );
+
+            return Number(sum / surveyData.length).toFixed(2)
+        }
+
+        function calcMaxAge(surveyData) {
+            return Math.max.apply(Math, surveyData.map(function (data) { return data.age; }))
+        }
+
+        function calcMinAge(surveyData) {
+            return Math.min.apply(Math, surveyData.map(function (data) { return data.age; }))
+        }
+
+        function countPessimoAnswer(surveyData) {
+            return surveyData.filter((data) => data.opinion === '1').length
+        }
+
+        function calcPercent(surveyData, value) {
+            return ((surveyData.filter((data) => data.opinion === value).length / surveyData.length) * 100).toFixed(2)
+        }
+
+        function calcPercentOtimo(surveyData) {
+            return calcPercent(surveyData, '4')
+        }
+
+        function calcPercentBom(surveyData) {
+            return calcPercent(surveyData, '3')
+        }
+
+        function countWoman(surveyData) {
+            return surveyData.filter((data) => data.gender === "F").length
+        }
+
+        function countMan(surveyData) {
+            return surveyData.filter((data) => data.gender === "M").length
+        }
+
+        const surveyList = []
+
+        const qtdSurvey = 45
+
+        while (surveyList.length < qtdSurvey) {
+            surveyList.push({
+                'age': whatIsAge(surveyList.length + 1),
+                'gender': whatIsGender(surveyList.length + 1),
+                'opinion': whatIsOpinion(surveyList.length + 1)
+            })
+        }
+
+        alert(`
+        Média de Idades: ${calcAvgAge(surveyList)}\n
+        Idade da Pessoa mais Velha: ${calcMaxAge(surveyList)}\n
+        Idade da Pessoa mais Nova: ${calcMinAge(surveyList)}\n
+        Quantidade de Péssimos: ${countPessimoAnswer(surveyList)}\n
+        Porcentagem de Ótimos: ${calcPercentOtimo(surveyList)}\n
+        Porcentagem de Bons: ${calcPercentBom(surveyList)}\n
+        Quantidade de Mulheres: ${countWoman(surveyList)}\n
+        Quantidade de Homens: ${countMan(surveyList)}
+        `)
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
