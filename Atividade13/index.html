@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercicio 13</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="">
+        <div>
+          <label for="texto">Texto</label>
+          <input type="text" name="texto" id="texto" />
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="maiuscula"
+            id="maiuscula"
+            onchange="toUpper()"
+          />
+          <label for="maiuscula">Maiuscula</label>
+
+          <input
+            type="checkbox"
+            name="minuscula"
+            id="minuscula"
+            onchange="toLower()"
+          />
+          <label for="minuscula">Minuscula</label>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
