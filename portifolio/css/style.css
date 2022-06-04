@@ -1,0 +1,75 @@
+@media only screen and (min-width: 768px) {
+  #shiftnav-toggle-main,
+  .shiftnav-toggle-mobile {
+    display: none;
+  }
+  .shiftnav-wrap {
+    padding-top: 0 !important;
+  }
+}
+
+/** ShiftNav Custom Tweaks (General Settings) **/
+.shiftnav-toggle-main-block {
+  display: none;
+}
+#shiftnav-toggle-main {
+  width: 60px;
+  left: auto;
+  right: 0;
+}
+.shiftnav-wrap {
+  padding-top: 0px !important;
+}
+
+.shiftnav.shiftnav-skin-light
+  ul.shiftnav-menu
+  li.menu-item.current-menu-item
+  > .shiftnav-target,
+.shiftnav.shiftnav-skin-light
+  ul.shiftnav-menu
+  > li.shiftnav-sub-accordion.current-menu-ancestor
+  > .shiftnav-target,
+.shiftnav.shiftnav-skin-light
+  ul.shiftnav-menu
+  > li.shiftnav-sub-shift.current-menu-ancestor
+  > .shiftnav-target,
+.shiftnav.shiftnav-skin-light
+  ul.shiftnav-menu
+  li.menu-item
+  ul.sub-menu
+  .current-menu-item
+  .shiftnav-target,
+#shiftnav-toggle-main {
+  background: #333333 !important;
+}
+
+.launchpad #shiftnav-toggle-main {
+  display: none;
+}
+
+#shiftnav-toggle-main.shiftnav-toggle-edge-right .shiftnav-toggle-burger,
+#shiftnav-toggle-main.shiftnav-toggle-edge-right.shiftnav-toggle-main-entire-bar::before,
+.shiftnav-open-right
+  #shiftnav-toggle-main.shiftnav-toggle-main-entire-bar::before {
+  float: left !important;
+}
+
+#shiftnav-toggle-main {
+  font-size: 20px !important;
+}
+
+.shiftnav.shiftnav-skin-light.shiftnav-nojs
+  ul.shiftnav-menu
+  li.menu-item
+  > .shiftnav-target:hover,
+.shiftnav.shiftnav-skin-light
+  ul.shiftnav-menu.shiftnav-active-on-hover
+  li.menu-item
+  > .shiftnav-target:hover,
+.shiftnav.shiftnav-skin-light
+  ul.shiftnav-menu.shiftnav-active-highlight
+  li.menu-item
+  > .shiftnav-target:active {
+  background: #252a2d none repeat scroll 0 0;
+}
+/* Status: Loaded from Transient */
