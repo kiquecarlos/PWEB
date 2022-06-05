@@ -69,7 +69,7 @@
     <link
       rel="stylesheet"
       id="mlestrnge-fontawesome-css"
-      href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+      href="./css/font-awesome.css"
       type="text/css"
       media="all"
     />
@@ -151,12 +151,7 @@
         >
           <div class="wrapper padding-bottom">
             <div class="gf_browser_chrome gform_wrapper" id="gform_wrapper_1">
-              <form
-                method="post"
-                enctype="multipart/form-data"
-                id="gform_1"
-                action="/contact/"
-              >
+              <form id="contactForm" onsubmit="return false">
                 <div class="gform_heading">
                   <h3 class="gform_title h2">
                     Gostaria de Entrar em Contato? Por Favor Preencha o
@@ -174,13 +169,13 @@
                     >
                       <label
                         class="gfield_label gfield_label_before_complex"
-                        for="input_1_1"
+                        for="contactName"
                         >Nome</label
                       >
                       <div class="ginput_container ginput_container_name">
                         <input
                           name="input_1"
-                          id="input_1_1"
+                          id="contactName"
                           type="text"
                           value=""
                           class="large form-control"
@@ -193,11 +188,13 @@
                       id="field_1_2"
                       class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible"
                     >
-                      <label class="gfield_label" for="input_1_2">Email</label>
+                      <label class="gfield_label" for="contactEmail"
+                        >Email</label
+                      >
                       <div class="ginput_container ginput_container_email">
                         <input
                           name="input_2"
-                          id="input_1_2"
+                          id="contactEmail"
                           type="text"
                           value=""
                           class="large form-control"
@@ -211,13 +208,13 @@
                       id="field_1_9"
                       class="gfield field_sublabel_below field_description_below gfield_visibility_visible"
                     >
-                      <label class="gfield_label" for="input_1_9"
+                      <label class="gfield_label" for="contactPhone"
                         >Telefone</label
                       >
                       <div class="ginput_container ginput_container_phone">
                         <input
                           name="input_9"
-                          id="input_1_9"
+                          id="contactPhone"
                           type="text"
                           value=""
                           class="large form-control"
@@ -230,13 +227,13 @@
                       id="field_1_4"
                       class="gfield textarea_short field_sublabel_below field_description_below gfield_visibility_visible"
                     >
-                      <label class="gfield_label" for="input_1_4"
+                      <label class="gfield_label" for="contactMessage"
                         >Mensagem</label
                       >
                       <div class="ginput_container ginput_container_textarea">
                         <textarea
                           name="input_4"
-                          id="input_1_4"
+                          id="contactMessage"
                           class="textarea large form-control"
                           tabindex="5"
                           aria-invalid="false"
@@ -258,7 +255,7 @@
                         class="gform_button button btn btn-primary btn-block"
                         value="Enviar"
                         tabindex="8"
-                        onclick=""
+                        onclick="submitContactForm()"
                       />
                     </div>
                   </div>
@@ -408,6 +405,9 @@
         </nav>
       </div>
     </div>
+
+    <script type="text/javascript" src="./js/contato.js"></script>
+
     <script type="text/javascript">
       /* <![CDATA[ */
       var shiftnav_data = {
