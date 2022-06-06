@@ -1,3 +1,3 @@
 Falta Fazer
 
-- Alterar Imagens
+- Alterar Cores dos Logos
